@@ -13,12 +13,12 @@ pcb2_d =  4.2;
 // connector overhang is 1.5mm
 w = 1.5;
 
-buiten_w = 296.0;
+buiten_w = 296.8;
 buiten_h = 226.0;
 buiten_d =   6.0;
 
-lcd_w = 290.6;
-lcd_h = 204.0;
+lcd_w = 291.6;
+lcd_h = 203.5;
 lcd_d =   2.6;
 
 bezel_edge_w = 293.0;
@@ -27,7 +27,7 @@ bezel_edge_d =   1.5;
 
 mag_w = 6.4;
 mag_h = 4.4;
-mag_d = 2.2;
+mag_d = 2.1;
 
 stiffener_w = 200.0;
 stiffener_h =  30.2;
@@ -60,7 +60,7 @@ module m() {
                         translate([x, hoekje_r, 0]) cylinder(r=hoekje_r, h=buiten_d);
                     }
                 }
-            translate([0, 8.5, 0]) cube([buiten_w, 1, buiten_d]);
+            translate([0, 9.5, 0]) cube([buiten_w, 1, buiten_d]);
             }
             
         }
@@ -155,8 +155,8 @@ module m() {
                     cube([100, 25, 1.5]);
                 }
 
-                translate([-105.31, 0, 0]) { // flatcable 2
-                    cube([110, 15, 1.5]);
+                translate([-95.31, 0, 0]) { // flatcable 2
+                    cube([100, 15, 1.5]);
                 }
             }
 
@@ -164,7 +164,7 @@ module m() {
                 cube([25, 100, 1.5]);
             }
 
-            translate([buiten_w-190, 20, 0]) { // flatcable 2
+            translate([buiten_w-180, 20, 0]) { // flatcable 2
                 cube([30, 97, 1.5]);
             }
 
@@ -206,8 +206,8 @@ module m() {
                     }
                 }
                 
-                translate([-159.31, pcb2_h-35, 0]) { // flatcable 2
-                    cube([150, 15, 2]);
+                translate([-149.31, pcb2_h-35, 0]) { // flatcable 2
+                    cube([150, 15, 1.5]);
                 }
             }
 
@@ -250,7 +250,7 @@ if(false) { // test
         rotate([0, 180, 0]) m();
         translate([-buiten_w-5, 0, -20]) cube([15, buiten_h, 40]);
     }
-} else if(false) { // deel A
+} else if(true) { // deel A
     intersection() {
         rotate([0, 180, 0]) m();
         translate([-buiten_w-5, 0, -20]) cube([buiten_w/2+5, buiten_h, 40]);
